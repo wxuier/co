@@ -9,6 +9,12 @@ Value::Jalloc::~Jalloc() {
     for (uint32 i = 0; i < _ks[1].size(); ++i) ::free((char*)_ks[1][i] - 8);
 }
 
+static Value::Jalloc jalloc;
+Value::Jalloc* Value::Jalloc::instance() {
+
+    return &jalloc;
+}
+
 void* Value::Jalloc::alloc(uint32 n) {
     char* p;
     if (n <= 24) {

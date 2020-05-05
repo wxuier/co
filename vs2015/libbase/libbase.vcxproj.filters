@@ -89,7 +89,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="..\..\base\co\context\context_x64.asm">
+    <MASM Include="..\..\base\co\context\context_x86.asm">
       <Filter>源文件</Filter>
     </MASM>
   </ItemGroup>

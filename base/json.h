@@ -75,11 +75,7 @@ class Value {
       public:
         Jalloc() = default;
         ~Jalloc();
-
-        static Jalloc* instance() {
-            static __thread Jalloc* jalloc = 0;
-            return jalloc ? jalloc : (jalloc = new Jalloc);
-        }
+        static Jalloc* instance();
 
         void* alloc16() {
             return !_l16.empty() ? ((void*)_l16.pop_back()) : malloc(16);
